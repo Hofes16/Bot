@@ -59,7 +59,7 @@ class BotGUI(wx.Frame):
             self.btc_label.SetForegroundColour(wx.Colour(255, 165, 0))
             self.eth_label.SetLabel(f"ETH / USDT: {self.logic.eth_price or 0:.2f}")
             self.eth_label.SetForegroundColour(wx.Colour(0, 128, 0))
-            self.mesaj_label.SetLabel(f"Durum Bilgisi nivelul="Durum: Durduruldu") if not self.logic.bot_running else "Durum: Çalışıyor")
+            self.mesaj_label.SetLabel(f"Durum: {'Durduruldu' if not self.logic.bot_running else 'Çalışıyor'}")
             self._refresh_theme()
             logging.debug("UI refreshed")
         except Exception as e:
